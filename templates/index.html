@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="shortcut icon" href="/static/css/imgs/bookstan (1).png" type="image/x-icon">
+    <title>Lojinha de Livros</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th onclick="alterarcorcoluna('livro', 'blue')">Livro</th>
+                <th onclick="alterarcorcoluna('paginas', 'green')">Páginas</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for livro in livros %}
+            <tr>
+                <td class="livro" onclick="resetarcorcoluna('livro')">{{livro.titulo}}</td>
+                <td class="paginas" onclick="resetarcorcoluna('paginas')">{{livro.paginas}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <script>
+        function alterarcorcoluna(classe, cor) {
+            const colunas = document.querySelectorAll(`.${classe}`);
+            colunas.forEach(coluna => {
+                coluna.style.backgroundColor = cor;
+            });
+        }
+
+        function resetarcorcoluna(classe) {
+            const colunas = document.querySelectorAll(`.${classe}`);
+            colunas.forEach(coluna => {
+                coluna.style.backgroundColor = 'white';
+            });
+        }
+    </script>
+</body>
+</html>
