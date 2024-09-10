@@ -13,5 +13,13 @@ def index():
     ]
     return render_template('index.html', livros=livros)
 
+@app.route('/formulario')
+def formulario():
+    return render_template('formulario.html')
+
+@app.route('/imagens')
+def imagens():
+    return render_template('imagens.html')   
+     
 if __name__ == "__main__":
     app.run(debug=True)

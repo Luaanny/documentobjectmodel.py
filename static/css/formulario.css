@@ -1,0 +1,20 @@
+.form-container {
+    margin: 20px auto;
+    width: 50%;
+    text-align: center;
+}
+
+#campoContainer {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#campoContainer input {
+    margin: 5px 0;
+    padding: 10px;
+    width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}

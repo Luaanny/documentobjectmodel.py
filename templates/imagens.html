@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Imagens {%endblock%}
+{% block css %}imagens{% endblock %} 
+{% block conteudo %}
+
+<div class="d-flex flex-column-reverse gap-5">
+    <div class="galeria">
+        <img src="/static/imgs/coraline.jpg" alt="">
+        <img src="/static/imgs/nv.jpg" alt="">
+        <img src="/static/imgs/monster-house-20061.jpg" alt="">
+        <img src="/static/imgs/bruxa.jpg" alt="">
+        <img src="/static/imgs/jack.jpg" alt="">
+    </div>
+    <div>
+        <i class="bi bi-zoom-in"></i>
+        <i class="bi bi-zoom-out"></i>
+    </div>
+
+    <script>
+        const lupas1 = document.querySelector('.bi-zoom-in');
+        const imagens = document.querySelectorAll('img')
+        const lupa2 = document.querySelector('.bi-zoom-out');
+        lupas1.addEventListener('click', () => {
+            imagens.forEach(imagem => {
+                imagem.style.transform = 'scale(1.5)'
+            })
+        })
+        lupa2.addEventListener('click', () => {
+            imagens.forEach(imagem => {
+                imagem.style.transform = 'scale(1)'
+            })
+        })
+    </script>
+</div>
+
+
+{% endblock %}

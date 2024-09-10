@@ -1,0 +1,36 @@
+{% extends 'base.html' %} {% block titulo%} Formulario {%endblock%}
+{% block css %}formulario{% endblock %} 
+
+{% block conteudo %}
+
+<div class="form-container">
+    <label for="numberSelect">Selecione a quantidade de campos:</label>
+    <select id="numberSelect">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+    <button onclick="criarCampos()">Gerar Campos</button>
+</div>
+
+<div id="campoContainer"></div>
+
+<script>
+    function criarCampos() {
+        const campoContainer = document.getElementById('campoContainer');
+        campoContainer.innerHTML = '';  // Limpa os campos anteriores
+
+        const quantidade = document.getElementById('numberSelect').value;
+
+        for (let i = 0; i < quantidade; i++) {
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.placeholder = `Campo ${i + 1}`;
+            campoContainer.appendChild(input);
+        }
+    }
+</script>
+
+{% endblock %}
